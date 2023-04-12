@@ -20,6 +20,7 @@
   --font: "Raleway", sans-serif;
   --max-width: 1200px;
   --header-height: 4rem;
+
 }
 
 /* Reset */
@@ -96,6 +97,33 @@ p {
 .menu-btn svg {
   fill: var(--first-color);
 }
+
+/* ******************heroImage******************** */
+.hero-image{
+    background-image: var(--hero-image) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: var(--hero-attachment);
+    background-position: center;
+
+}
+
+.hero-image-opacity{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--hero-opacity-color);
+
+}
+
+.hero-image-title{
+    font-size: 7.5vw;
+    color: var(--hero-text-color);
+}
+
 /* menu */
 .menu {
   position: fixed;
@@ -157,6 +185,17 @@ p {
 /*  Utilities*/
 .box-shadow-1 {
   box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.25);
+}
+.btn{
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: inline-block;
+    width: 200px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: var(--white-color);
+    background-color: var(--first-color);
 }
 .container {
   margin-left: auto;
