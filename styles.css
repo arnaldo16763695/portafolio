@@ -1,8 +1,8 @@
 /* Custom properties */
 
 :root {
-  --first-color: #d90062;
-  --first-alpha-color: rgba(217, 0, 98, 0.75);
+  --first-color: #fa8108;
+  --first-alpha-color: #fa810895 ;
   --second-color: #14192d;
   --second-alpha-color: rgba(20, 25, 45, 0.75);
   --third-color: #501464;
@@ -86,6 +86,83 @@ p {
 }
 
 /* Components */
+
+/* ***************************Carousel************************** */
+@keyframes carousel-slide {
+  0%{
+    transform: translateX(0%);
+  }
+  25%{
+    transform: translateX(-25%);
+  }
+  50%{
+    transform: translateX(-50%);
+  }
+  100%{
+    transform: translateX(-75%);
+  }
+}
+.carousel{
+  margin: 2rem auto;
+  padding: 2rem 0;
+  max-width: 800px;
+  text-align: center;
+  background-color: var(--carousel-bg-color) ;
+  overflow-x: hidden;
+}
+
+.carousel input{
+  display: none;
+ 
+}
+
+.carousel .slides{
+  display: flex;
+  padding-left: 0;
+  /* 100% por cada slides */
+  width: 400%;
+  list-style: none;
+  transition: transform 0.5s ease-in-out;
+  animation: carousel-slide 12s ease-in-out 3s ;
+}
+
+.carousel-label{
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin: 0 0.25rem;
+  border: medium solid var(--gray-dark-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#slide-1:checked ~ .slides{
+  transform: translateX(0%);
+}
+#slide-2:checked ~ .slides{
+  transform: translateX(-25%);
+}
+#slide-3:checked ~ .slides{
+  transform: translateX(-50%);
+}
+#slide-4:checked ~ .slides{
+  transform: translateX(-75%);
+}
+#slide-1:checked ~ .slides-nav label#dot-1{
+  background-color: var(--gray-dark-color);
+}
+#slide-2:checked ~ .slides-nav label#dot-2{
+  background-color: var(--gray-dark-color);
+}
+#slide-3:checked ~ .slides-nav label#dot-3{
+  background-color: var(--gray-dark-color);
+}
+#slide-4:checked ~ .slides-nav label#dot-4{
+  background-color: var(--gray-dark-color);
+}
+
+
+/* **************************/Carousel************************** */
 .menu-btn {
   outline: thin solid var(--first-color);
   border: 0;
@@ -246,6 +323,11 @@ progress::-moz-progress-bar {
 }
 
 /*  Utilities*/
+.avatar{
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
 .bg-gray-light{
   background-color: var(--gray-light-color);
 }
@@ -294,6 +376,9 @@ progress::-moz-progress-bar {
 .text-left {
   text-align: left;
 }
+.text-first-color{
+color: var(--first-color);
+}
 .text-right {
   text-align: right;
 }
@@ -323,6 +408,7 @@ progress::-moz-progress-bar {
 .about > article {
   margin-bottom: 2rem;
 }
+
 .header {
   position: fixed;
   left: 0;
