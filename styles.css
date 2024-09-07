@@ -435,7 +435,7 @@ textarea {
   max-width: var(--max-width);
 }
 .gray-scale {
-  filter: grayscale(1);
+  filter: grayscale(0.2);
 }
 .none {
   display: none;
